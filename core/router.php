@@ -31,8 +31,8 @@ class Router {
 //            }
 //        }
         if (preg_match($reg_exp, $url, $matches)) {
-            $params [];
-            foreach ($matches as $key => $params) {
+            $params = [];
+            foreach ($matches as $key => $match) {
                 if (is_string($key)) {
                     $params[$key] = $match;
                 }
