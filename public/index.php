@@ -6,4 +6,21 @@
  * Time: 3:23 PM
  */
 
-echo "Hello from the other side";
+require '../core/router.php';
+
+$router = new Router();
+
+echo get_class($router);
+
+
+// Add routes
+$router->addRoute('', ['controller' => 'Home', 'action' => 'index']);
+$router->addRoute('posts', ['controller' => 'Posts', 'action' => 'index']);
+$router->addRoute('posts/new', ['controller' => 'Posts', 'action' => 'new']);
+
+// Display routes
+echo '<pre>';
+var_dump($router->getRoute());
+echo '</pre>';
+
+//echo "requested URI = ". $_SERVER['QUERY_STRING'] . "!";
